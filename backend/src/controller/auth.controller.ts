@@ -45,8 +45,8 @@ const signInController = async (req: Request, res: Response) => {
   // get user details
   const { email, password }: UserDetails = req.body;
   // generate token
-  const token = await req.cookies.token;
-  const user = jwt.verify(token, "dummysecret");
+  // const token = await req.cookies.token;
+  // const user = jwt.verify(token, "dummysecret");
   const refToken = jwt.sign({ email }, "dummysecret", { expiresIn: "1d" });
   // send a new token in cookies
 
